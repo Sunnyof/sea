@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        jcenter()
+        maven{url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        jcenter()
+        maven{url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url 'https://jitpack.io' }
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "Deep sea charge"
+include ':libcocos'
+project(':libcocos').projectDir  = new File(COCOS_ENGINE_PATH,'cocos/platform/android/libcocos2dx')
+include ':app'
+include ':lib_service'
