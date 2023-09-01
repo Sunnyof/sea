@@ -15,7 +15,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.WindowManager;
 
-import com.game.BaseApplication;
+import sj.A;
 
 import java.net.URISyntaxException;
 import java.util.Locale;
@@ -29,7 +29,7 @@ public class AppUtil {
      * 复制文本到剪切板
      */
     public void clip2Cocos(String text) {
-        ClipboardManager clipboardManager = (ClipboardManager) BaseApplication.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipboardManager clipboardManager = (ClipboardManager) A.getInstance().getSystemService(Context.CLIPBOARD_SERVICE);
         ClipData.newPlainText("Label", text);
     }
 
@@ -60,9 +60,9 @@ public class AppUtil {
      * 退出应用
      */
     public void quitApp() {
-        ActivityManager manager = (ActivityManager) BaseApplication.getInstance().getApplicationContext()
+        ActivityManager manager = (ActivityManager) A.getInstance().getApplicationContext()
                 .getSystemService(Context.ACTIVITY_SERVICE);
-        manager.killBackgroundProcesses(BaseApplication.getInstance().getApplicationContext().getPackageName());
+        manager.killBackgroundProcesses(A.getInstance().getApplicationContext().getPackageName());
         System.exit(0);
     }
 
@@ -77,7 +77,7 @@ public class AppUtil {
         try {
             Intent intent = Intent.parseUri(deepLink, Intent.URI_INTENT_SCHEME);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            BaseApplication.getInstance().getApplicationContext().startActivity(intent);
+            A.getInstance().getApplicationContext().startActivity(intent);
         } catch (URISyntaxException exception) {
             exception.printStackTrace();
         }
@@ -129,7 +129,7 @@ public class AppUtil {
      */
     public String getTelOperator() {
         TelephonyManager telephonyManager =
-                (TelephonyManager) BaseApplication.getInstance().getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
+                (TelephonyManager) A.getInstance().getApplicationContext().getSystemService(Context.TELEPHONY_SERVICE);
         return telephonyManager.getSimOperator();
     }
 
@@ -137,7 +137,7 @@ public class AppUtil {
      * 获取安装时间
      */
     public long getInstallTime() {
-        PackageManager packageManager = BaseApplication.getInstance().getApplicationContext().getPackageManager();
+        PackageManager packageManager = A.getInstance().getApplicationContext().getPackageManager();
         PackageInfo packageInfo = null;
         try {
             packageInfo = packageManager.getPackageInfo(context.getPackageName(), 0);

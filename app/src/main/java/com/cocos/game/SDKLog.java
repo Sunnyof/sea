@@ -3,7 +3,7 @@ package com.cocos.game;
 
 import android.util.Log;
 
-import com.game.ad.GameGoogleAd;
+import com.game.ad.Gga;
 
 
 public class SDKLog {
@@ -18,7 +18,7 @@ public class SDKLog {
 
     public static void adShow() {
         Log.e("TAG", "showGoodleAd");
-        GameGoogleAd.getInstance().showAd();
+        Gga.getInstance().showAd();
     }
 
     //    ## SDK功能通讯类`SDKLog`
@@ -117,7 +117,7 @@ public class SDKLog {
 
     public static void showAdmob(String tr) {
         Log.i(TAG, "showAdmob:" + tr);
-        GameGoogleAd.getInstance().showAd();
+        Gga.getInstance().showAd();
     }
 
 }

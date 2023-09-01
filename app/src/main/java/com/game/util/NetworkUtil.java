@@ -5,7 +5,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.game.BaseApplication;
+import sj.A;
 
 public class NetworkUtil {
 
@@ -16,7 +16,7 @@ public class NetworkUtil {
      */
     public static boolean getNetworkConnectState() {
         //获取系统的网络服务
-        ConnectivityManager connManager = (ConnectivityManager) BaseApplication.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connManager = (ConnectivityManager) A.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
         //如果当前没有网络
         if (null == connManager) return false;
         //获取当前网络类型，如果为空，返回无网络
@@ -52,7 +52,7 @@ public class NetworkUtil {
      */
     public static String getNetWorkType() {
         //获取系统的网络服务
-        ConnectivityManager connManager = (ConnectivityManager) BaseApplication.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connManager = (ConnectivityManager) A.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
         //如果当前没有网络
         if (null == connManager) return "";
         //获取当前网络类型，如果为空，返回无网络

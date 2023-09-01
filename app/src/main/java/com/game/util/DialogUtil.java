@@ -4,7 +4,7 @@ import android.app.Activity;
 
 import com.game.d.BaseViewModel;
 import com.game.d.RequestHelp;
-import com.game.BaseConstant;
+import sj.F;
 import com.lxj.xpopup.XPopup;
 import com.lxj.xpopup.core.BasePopupView;
 import com.lxj.xpopup.enums.PopupAnimation;
@@ -44,13 +44,13 @@ public class DialogUtil {
 
 
     public static int getPlatform() {
-        int platform = BaseConstant.INT_CHANNEL_ID;
-        String channelId = SharePreferenceHelp.instance().popString(BaseConstant.CHANNEL_ID);
+        int platform = F.INT_CHANNEL_ID;
+        String channelId = SharePreferenceHelp.instance().popString(F.CHANNEL_ID);
         if (!channelId.isEmpty()) {
             try {
                 platform = Integer.parseInt(channelId);
             } catch (Exception e) {
-                platform = BaseConstant.INT_CHANNEL_ID;
+                platform = F.INT_CHANNEL_ID;
             }
         }
         return platform;

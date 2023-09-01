@@ -5,8 +5,8 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.game.BaseApplication;
-import com.game.BaseConstant;
+import sj.A;
+import sj.F;
 import com.google.android.gms.ads.AdError;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.FullScreenContentCallback;
@@ -17,13 +17,13 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.deepsea.charge.BuildConfig;
 
 
-public class GameGoogleAd {
-    private static String TAG = GameGoogleAd.class.getSimpleName();
-    private static GameGoogleAd gameGoogleAd = new GameGoogleAd();
+public class Gga {
+    private static String TAG = Gga.class.getSimpleName();
+    private static Gga gameGoogleAd = new Gga();
 
     private InterstitialAd mInterstitialAd;
 
-    public static GameGoogleAd getInstance() {
+    public static Gga getInstance() {
         return gameGoogleAd;
     }
 
@@ -75,7 +75,7 @@ public class GameGoogleAd {
      * 初始化Google广告
      */
     private void initAd() {
-        InterstitialAd.load(BaseApplication.getInstance(), getAdUnitId(), new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
+        InterstitialAd.load(A.getInstance(), getAdUnitId(), new AdRequest.Builder().build(), new InterstitialAdLoadCallback() {
             @Override
             public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                 super.onAdFailedToLoad(loadAdError);
@@ -111,8 +111,8 @@ public class GameGoogleAd {
      */
     private String getAdUnitId() {
         if (BuildConfig.DEBUG) {
-            return BaseConstant.DEBUG_AD_UNIT_ID;
+            return F.DEBUG_AD_UNIT_ID;
         }
-        return BaseConstant.AD_UNIT_ID;
+        return F.AD_UNIT_ID;
     }
 }

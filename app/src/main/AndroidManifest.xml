@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.game.BaseApplication"
+        android:name="sj.A"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -35,7 +35,7 @@
 
         <activity
             android:theme="@style/SplashTheme"
-            android:name="com.game.main.GameActivity"
+            android:name="sk.B"
             android:screenOrientation="sensorLandscape"
             android:exported="true">
             <intent-filter>
@@ -45,11 +45,11 @@
         </activity>
         <activity
             android:screenOrientation="sensorLandscape"
-            android:name="com.game.main.MainActivity"
+            android:name="sk.C"
             android:exported="true"
             android:launchMode="singleTop"></activity>
         <service
-            android:name="com.game.service.LocalFirebaseMessagingService"
+            android:name="sl.D"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />

@@ -10,7 +10,7 @@ import android.view.DisplayCutout;
 import android.view.View;
 import android.view.WindowInsets;
 
-import com.game.BaseApplication;
+import sj.A;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -53,7 +53,7 @@ class NutchHelp {
                 notchHeight = (long) TypedValue.applyDimension(
                         TypedValue.COMPLEX_UNIT_DIP,
                         32f,
-                        BaseApplication.getInstance().getApplicationContext().getResources().getDisplayMetrics()
+                        A.getInstance().getApplicationContext().getResources().getDisplayMetrics()
                 );
             } else if (manufacturer.equalsIgnoreCase("oppo")) {
                 notchHeight = 80; //oppo当时是固定数值
@@ -101,7 +101,7 @@ class NutchHelp {
         int result = 0;
         if (Build.MANUFACTURER.equalsIgnoreCase("Xiaomi")) {
             try {
-                ClassLoader classLoader = BaseApplication.getInstance().getClassLoader();
+                ClassLoader classLoader = A.getInstance().getClassLoader();
                 Class SystemProperties = classLoader.loadClass("android.os.SystemProperties");
                 //参数类型
                 Class[] paramTypes = new Class[2];
@@ -128,7 +128,7 @@ class NutchHelp {
     private boolean hasNotchAtHuawei() {
         boolean ret = false;
         try {
-            ClassLoader classLoader = BaseApplication.getInstance().getClassLoader();
+            ClassLoader classLoader = A.getInstance().getClassLoader();
             Class HwNotchSizeUtil = classLoader.loadClass("com.huawei.android.util.HwNotchSizeUtil");
             Method get = HwNotchSizeUtil.getMethod("hasNotchInScreen");
             ret = (boolean) get.invoke(HwNotchSizeUtil);
@@ -144,7 +144,7 @@ class NutchHelp {
      * @return
      */
     private boolean hasNotchAtOPPO() {
-        return BaseApplication.getInstance().getPackageManager()
+        return A.getInstance().getPackageManager()
                 .hasSystemFeature("com.oppo.feature.screen.heteromorphism");
     }
 
@@ -157,7 +157,7 @@ class NutchHelp {
         boolean ret = false;
         byte VIVO_NOTCH = 0x00000020;
         try {
-            ClassLoader classLoader = BaseApplication.getInstance().getClassLoader();
+            ClassLoader classLoader = A.getInstance().getClassLoader();
             Class FtFeature = classLoader.loadClass("android.util.FtFeature");
             Method method = FtFeature.getMethod("isFeatureSupport", Integer.class);
             ret = (boolean) method.invoke(FtFeature, VIVO_NOTCH);
@@ -175,7 +175,7 @@ class NutchHelp {
     private boolean hasNotchSamsung() {
         if (Build.MANUFACTURER.equalsIgnoreCase("samsung")) {
             try {
-                Resources res = BaseApplication.getInstance().getResources();
+                Resources res = A.getInstance().getResources();
                 int resId =
                         res.getIdentifier("config_mainBuiltInDisplayCutout", "string", "android");
                 String spec = resId > 0 ? res.getString(resId) : null;
@@ -238,7 +238,7 @@ class NutchHelp {
      */
     private int getSysStatusBarHeight() {
         int result = 0;
-        Resources resources = BaseApplication.getInstance().getResources();
+        Resources resources = A.getInstance().getResources();
         int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
             result = resources.getDimensionPixelSize(resourceId);
@@ -257,7 +257,7 @@ class NutchHelp {
     private int getNotchSizeAtHuaWei() {
         int height = 0;
         try {
-            ClassLoader cl = BaseApplication.getInstance().getClassLoader();
+            ClassLoader cl = A.getInstance().getClassLoader();
             Class HwNotchSizeUtil = cl.loadClass("com.huawei.android.util.HwNotchSizeUtil");
             Method get = HwNotchSizeUtil.getMethod("getNotchSize");
             int[] ret = (int[]) get.invoke(HwNotchSizeUtil);
