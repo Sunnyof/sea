@@ -11,7 +11,7 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
-public class FileUtil {
+public class FiUtil {
     /**
      * 根据文件名称删除文件
      *

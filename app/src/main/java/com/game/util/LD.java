@@ -5,7 +5,7 @@ import android.util.Log;
 import com.deepsea.charge.BuildConfig;
 
 
-public class LogD {
+public class LD {
     private static String TAG = "CocosGame";
 
     public static void logI(String message) {

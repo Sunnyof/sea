@@ -45,7 +45,7 @@ public class DialogUtil {
 
     public static int getPlatform() {
         int platform = F.INT_CHANNEL_ID;
-        String channelId = SharePreferenceHelp.instance().popString(F.CHANNEL_ID);
+        String channelId = SharePreeHelp.instance().popString(F.CHANNEL_ID);
         if (!channelId.isEmpty()) {
             try {
                 platform = Integer.parseInt(channelId);

@@ -7,7 +7,7 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class KeyBoardUtil {
+public class KeyBodUtil {
 
     private Activity activity;
     private View view;
@@ -15,7 +15,7 @@ public class KeyBoardUtil {
 
     private ViewTreeObserver viewViewTreeObserver;
 
-    public KeyBoardUtil(Activity activity, View view) {
+    public KeyBodUtil(Activity activity, View view) {
         this.activity = activity;
         this.view = view;
     }

@@ -4,7 +4,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-public class ThreadUtil {
+public class ThrUtil {
 
     private static ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(1,3,3000, TimeUnit.MILLISECONDS,new LinkedBlockingDeque<>());
 

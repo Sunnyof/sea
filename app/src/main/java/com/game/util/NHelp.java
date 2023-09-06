@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Locale;
 
 
-class NutchHelp {
+class NHelp {
 
     /**
      * 是否获取过刘海高度
@@ -269,8 +269,8 @@ class NutchHelp {
         return height;
     }
 
-    public static NutchHelp getInstance() {
-        return new NutchHelp();
+    public static NHelp getInstance() {
+        return new NHelp();
     }
 
 }

@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 
 import sj.A;
 
-public class NetworkUtil {
+public class NeUtil {
 
     /**
      * 获取当前网络连接状态

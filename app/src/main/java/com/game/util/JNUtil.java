@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.util.Iterator;
 import java.util.Map;
 
-public class JSONUtil {
+public class JNUtil {
     public static String map2Json(Map<String, Object> map) {
         Iterator<String> iterator = map.keySet().iterator();
         JSONObject jsonObject = new JSONObject();

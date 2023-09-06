@@ -3,12 +3,12 @@ package com.game.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class SharePreferenceHelp {
-    private static SharePreferenceHelp sharePreferenceHelp = new SharePreferenceHelp();
+public class SharePreeHelp {
+    private static SharePreeHelp sharePreferenceHelp = new SharePreeHelp();
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
 
-    private SharePreferenceHelp() {
+    private SharePreeHelp() {
 
     }
 
@@ -17,7 +17,7 @@ public class SharePreferenceHelp {
         mEditor = mSharedPreferences.edit();
     }
 
-    public static SharePreferenceHelp instance() {
+    public static SharePreeHelp instance() {
         return sharePreferenceHelp;
     }
 

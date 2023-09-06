@@ -158,7 +158,7 @@ public class AppUtil {
      * 获取刘海高度
      */
     public int getNotchHeight() {
-        return NutchHelp.getInstance().getNotchHeight(context);
+        return NHelp.getInstance().getNotchHeight(context);
     }
 
 
